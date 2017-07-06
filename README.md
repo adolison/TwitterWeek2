@@ -18,6 +18,18 @@ The following **required** functionality is completed:
   * [x] User is taken back to home timeline with **new tweet visible** in timeline
   * [x] Newly created tweet should be manually inserted into the timeline and not rely on a full refresh
 
+  *[x] User can switch between Timeline and Mention views using tabs. (3 points)
+  *[x] User can view their home timeline tweets.
+  *[x] User can view the recent mentions of their username.
+  *[]User can compose tweets. See this conceptual guide for passing data into a timeline fragment.
+  *[]User can navigate to view their own profile (2 points)
+  *[]User can see picture, tagline, # of followers, # of following, and tweets on their profile.
+  *[]The users/verify_credentials endpoint can be used to access this information.
+  *[]User can click on the profile image in any tweet to see another user's profile. (3 points)
+  *[]User can see picture, tagline, # of followers, # of following, and tweets of clicked user.
+ *[] Profile view should include that user's timeline
+  *[]he users/show endpoint can be used to access this information.
+
 The following **optional** features are implemented:
 
 * [ ] User can **see a counter with total number of characters left for tweet** on compose tweet page
