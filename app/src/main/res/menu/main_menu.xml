@@ -4,8 +4,8 @@
     <item
         android:id="@+id/miCompose"
         android:icon="@android:drawable/ic_menu_compass"
+        android:onClick="ClickAction"
         android:title="Compose"
-        app:showAsAction="always"
-        android:onClick="ClickAction"></item>
+        app:showAsAction="always"></item>
 
 </menu>

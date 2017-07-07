@@ -7,11 +7,15 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.codepath.apps.restclienttemplate.models.Tweet;
+
+import fragments.TweetsListFragment;
 import fragments.TweetsPagerAdapter;
 
 
-public class TimelineActivity extends AppCompatActivity {
+public class TimelineActivity extends AppCompatActivity implements TweetsListFragment.TweetSelectedListener{
     private final int NT_Request_Code = 20;
     //private TwitterClient client;
     private final int REQUEST_CODE = 20;
@@ -43,17 +47,22 @@ public class TimelineActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_timeline, menu);
+        //getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
     public void onProfileView(MenuItem item) {
-
         // launch the profile view
         Intent i = new Intent(this, ProfileActivity.class);
         startActivity(i);
+    }
+
+    @Override
+    public void onTweetSelected(Tweet tweet) {
+        Toast.makeText(this,tweet.body, Toast.LENGTH_SHORT).show();
 
     }
-/*
+    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
