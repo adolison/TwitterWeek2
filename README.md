@@ -22,18 +22,18 @@ The following **required** functionality is completed:
   * [x] User can view their home timeline tweets.
   * [x] User can view the recent mentions of their username.
   * []User can compose tweets. See this conceptual guide for passing data into a timeline fragment.
-  * []User can navigate to view their own profile (2 points)
-  * []User can see picture, tagline, # of followers, # of following, and tweets on their profile.
-  * []The users/verify_credentials endpoint can be used to access this information.
-  * []User can click on the profile image in any tweet to see another user's profile. (3 points)
-  * []User can see picture, tagline, # of followers, # of following, and tweets of clicked user.
- * [ ] Profile view should include that user's timeline
-  * [ ]he users/show endpoint can be used to access this information.
+  * [x]User can navigate to view their own profile (2 points)
+  * [x]User can see picture, tagline, # of followers, # of following, and tweets on their profile.
+  * [x]The users/verify_credentials endpoint can be used to access this information.
+  * [x]User can click on the profile image in any tweet to see another user's profile. (3 points)
+  * [x]User can see picture, tagline, # of followers, # of following, and tweets of clicked user.
+ * [x] Profile view should include that user's timeline
+  * [x]he users/show endpoint can be used to access this information.
 
 The following **optional** features are implemented:
 
 * [ ] User can **see a counter with total number of characters left for tweet** on compose tweet page
-* [x] User can **pull down to refresh tweets timeline**
+* [] User can **pull down to refresh tweets timeline**
 * [ ] User is using **"Twitter branded" colors and styles**
 * [ ] User sees an **indeterminate progress indicator** when any background or network task is happening
 * [ ] User can **select "reply" from detail view to respond to a tweet**
@@ -64,7 +64,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/LlXyNd8.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/NgcVI3g.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

@@ -30,8 +30,12 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        client = TwitterApp.getRestClient();
 
         String screenName = getIntent().getStringExtra("screen_name");
+        Long userID = getIntent().getLongExtra("user_ID",0);
+
+        //Toast.makeText(ProfileActivity.this,screenName, Toast.LENGTH_SHORT).show();
         // create the user fragment
         UserTimelineFragment userTimelineFragment = UserTimelineFragment.newInstance(screenName);
         // display the user timeline fragment inside the container (dynamic)
@@ -42,28 +46,40 @@ public class ProfileActivity extends AppCompatActivity {
         //commit
         ft.commit();
 
-        client = TwitterApp.getRestClient();
-        client.getUserInfo(new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                User user = null;
-                try {
-                    user = User.fromJSON(response);
-                    getSupportActionBar().setTitle(user.screenName);
-                    populateUserHeader(user);
-                } catch (JSONException e) {
-                    e.printStackTrace();
+        if (screenName == null || userID == 0){
+            client.getUserInfo(new JsonHttpResponseHandler() {
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    User user = null;
+                    try {
+                        user = User.fromJSON(response);
+                        getSupportActionBar().setTitle(user.screenName);
+                        populateUserHeader(user);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
+                @Override
+                public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                    Log.e("debug", responseString);
+                }
+            });
+        } else{
+            client.getOtherUserInfo(screenName, userID, new JsonHttpResponseHandler(){
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    User user = null;
+                    try {
+                        user = User.fromJSON(response);
+                        getSupportActionBar().setTitle(user.screenName);
+                        populateUserHeader(user);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
 
-            @Override
-            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                Log.e("debug", responseString);
-            }
-        });
-
-
-
+            });
+        }
     }
 
     public void populateUserHeader (User user) {
