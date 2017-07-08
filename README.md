@@ -21,7 +21,7 @@ The following **required** functionality is completed:
   * [x] User can switch between Timeline and Mention views using tabs. (3 points)
   * [x] User can view their home timeline tweets.
   * [x] User can view the recent mentions of their username.
-  * []User can compose tweets. See this conceptual guide for passing data into a timeline fragment.
+  * [x]User can compose tweets. See this conceptual guide for passing data into a timeline fragment.
   * [x]User can navigate to view their own profile (2 points)
   * [x]User can see picture, tagline, # of followers, # of following, and tweets on their profile.
   * [x]The users/verify_credentials endpoint can be used to access this information.
@@ -33,7 +33,7 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 * [ ] User can **see a counter with total number of characters left for tweet** on compose tweet page
-* [] User can **pull down to refresh tweets timeline**
+* [ ] User can **pull down to refresh tweets timeline**
 * [ ] User is using **"Twitter branded" colors and styles**
 * [ ] User sees an **indeterminate progress indicator** when any background or network task is happening
 * [ ] User can **select "reply" from detail view to respond to a tweet**

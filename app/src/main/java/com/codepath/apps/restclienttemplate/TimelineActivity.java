@@ -48,12 +48,18 @@ public class TimelineActivity extends AppCompatActivity implements TweetsListFra
         getMenuInflater().inflate(R.menu.menu_timeline, menu);
         //getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
+
     }
 
     public void onProfileView(MenuItem item) {
         // launch the profile view
         Intent i = new Intent(this, ProfileActivity.class);
         startActivity(i);
+    }
+
+    public void onComposeView(MenuItem comp) {
+        Intent pi = new Intent(this, ComposeActivity.class);
+        startActivity(pi);
     }
 
     @Override

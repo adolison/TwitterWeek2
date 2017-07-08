@@ -10,4 +10,12 @@
         app:showAsAction="ifRoom"
         android:layout_height="match_parent" />
 
+    <item
+        android:title = "comp"
+        app:showAsAction="always"
+        android:onClick="onComposeView"
+        android:id="@+id/miCompose"
+        android:icon="@android:drawable/ic_menu_compass"
+        />
+
 </menu>
